@@ -1,7 +1,7 @@
 [
     {"conditions":
         [
-            {"topic":"soil/moisture","comparison":"<","value":30}
+            {"topic":"soil/moisture","comparison":"<","value":50}
         ],
      "results":
         [
@@ -10,7 +10,7 @@
     },
     {"conditions":
         [
-            {"topic":"soil/moisture","comparison":">","value":30}
+            {"topic":"soil/moisture","comparison":">","value":50}
         ],
      "results":
         [
@@ -19,25 +19,21 @@
     },
     {"conditions":
         [
-            {"topic":"tank/humidity","comparison":">","value":20},
-            {"topic":"soil/temperature","comparison":">","value":40}
+            {"topic":"tank/light","comparison":"<","value":30},
         ],
      "results":
         [
-            {"topic":"system/fan","value":"on"},
-            {"topic":"system/light","value":"on"}
+            {"topic":"tank/led","value":"open"}
         ]
     },
 
     {"conditions":
         [
-            {"topic":"tank/humidity","comparison":"<","value":20},
-            {"topic":"soil/temperature","comparison":"<","value":40}
+            {"topic":"tank/light","comparison":">","value":30},
         ],
      "results":
         [
-            {"topic":"system/fan","value":"off"},
-            {"topic":"system/light","value":"off"}
+            {"topic":"tank/led","value":"close"}
         ]
     }
 ]
