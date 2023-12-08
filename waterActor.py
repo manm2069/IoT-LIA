@@ -5,11 +5,11 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
 # Define and intialize pins
-GPIO.setup(18, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
 
 # Define the MQTT broker and topic
 broker_address = "localhost"  # Replace with the Raspberry Pi's IP if not running locally
-topic = "tank/led"  # Replace with the desired MQTT topic
+topic = "tank/water"  # Replace with the desired MQTT topic
 
 # Callback functions for MQTT client
 def on_connect(client, userdata, flags, rc):
@@ -21,9 +21,9 @@ def on_message(client, userdata, message):
     tank_state = str(message.payload.decode("utf-8"))
 
     if tank_state == "open":
-        GPIO.output(18, 1)
+        GPIO.output(23, 1)
     elif tank_state == "close":
-        GPIO.output(18, 0)
+        GPIO.output(23, 0)
 
 # Create an MQTT client
 client = mqtt.Client()
