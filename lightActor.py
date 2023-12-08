@@ -9,7 +9,7 @@ GPIO.setup(18, GPIO.OUT)
 
 # Define the MQTT broker and topic
 broker_address = "localhost"  # Replace with the Raspberry Pi's IP if not running locally
-topic = "tank/water"  # Replace with the desired MQTT topic
+topic = "tank/led"  # Replace with the desired MQTT topic
 
 # Callback functions for MQTT client
 def on_connect(client, userdata, flags, rc):
